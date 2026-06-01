@@ -31,7 +31,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url('/bg.png');
+  background-image: url('/La-Cafe/bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
