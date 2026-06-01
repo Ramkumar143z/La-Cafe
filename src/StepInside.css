@@ -1,0 +1,128 @@
+.step-inside-scroll-container {
+  height: 1000vh; /* Accommodate both 3D sequences smoothly */
+  position: relative;
+  background-color: var(--bg-dark);
+}
+
+.step-inside-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-inside-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-inside-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.blend-image-container {
+  width: 100%;
+  max-width: 1600px;
+  height: 70vh; /* Adjust height for the canvas wrapper */
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blend-canvas {
+  width: 100%;
+  height: 100%;
+  /* Cinematic edge blending */
+  mask-image: linear-gradient(to top, transparent 0%, black 20%, black 80%, transparent 100%),
+              linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 20%, black 80%, transparent 100%),
+                      linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+/* Philosophy Text Overlay */
+.philosophy-text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  max-width: 650px; /* Decreased from 800px */
+  opacity: 0; /* JavaScript will animate this based on scroll */
+  pointer-events: none; /* Let the scroll pass through */
+  
+  /* Glassmorphism background for readability over the frame */
+  background: rgba(21, 15, 13, 0.65);
+  padding: 3rem; /* Decreased from 3.5rem */
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.philosophy-text-container .badge {
+  margin-bottom: 1.5rem;
+  background-color: rgba(92, 64, 51, 0.6);
+}
+
+.philosophy-text-container .section-title {
+  margin-bottom: 2rem;
+  font-size: clamp(1.8rem, 3vw, 2.8rem); /* Slightly smaller to fit compact box */
+}
+
+.philosophy-logo {
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  opacity: 0; /* JS controls this */
+  /* Drop shadow to make it pop against the dark glass */
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6));
+}
+
+.philosophy-desc {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; /* Reduced from 1.2rem */
+  line-height: 1.7;
+  color: #e3d3bd;
+  margin-bottom: 1.25rem;
+}
+
+.philosophy-desc:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .blend-image-container {
+    height: 60vh;
+  }
+  .philosophy-text-container {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy-text-container .section-title {
+    font-size: 2rem;
+  }
+  .philosophy-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}

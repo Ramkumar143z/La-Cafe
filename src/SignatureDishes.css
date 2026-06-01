@@ -1,0 +1,132 @@
+.signature-scroll-container {
+  height: 250vh; /* Allow enough scroll distance to play all frames */
+  position: relative;
+  background-color: #150f0d;
+}
+
+.signature-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center; /* Center the section vertically */
+  justify-content: center;
+}
+
+.signature-section {
+  width: 100%;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary);
+}
+
+.signature-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(92, 64, 51, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  color: #d8c3a5;
+}
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #c4b5a1;
+  font-weight: 400;
+}
+
+.dishes-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.dish-card {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  flex: 1;
+  min-width: 300px;
+}
+
+.dish-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.dish-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dish-card:hover .dish-image {
+  transform: scale(1.08);
+}
+
+.dish-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 4rem 2rem 2rem;
+  background: linear-gradient(to top, rgba(15, 10, 8, 0.95) 0%, rgba(15, 10, 8, 0.7) 40%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none; /* Let hover pass through to the image */
+}
+
+.dish-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fcf9f2;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.signature-actions {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .signature-section { padding: 4rem 2rem; }
+  .dishes-container { flex-direction: column; align-items: center; }
+  .dish-card { height: 400px; max-width: 100%; }
+}
