@@ -2,21 +2,22 @@ import React, { useRef, useEffect, useState } from 'react';
 import './SignatureDishes.css';
 import BurgerScrollCard from './BurgerScrollCard';
 
+const baseUrl = import.meta.env.BASE_URL;
 const dishes = [
   {
     id: 1,
     name: 'Death by Chocolate',
-    image: '/deathbuchocolatenew.webp'
+    image: `${baseUrl}deathbuchocolatenew.webp`
   },
   {
     id: 2,
     name: 'Big Bang',
-    image: '/bigbangnew.webp'
+    image: `${baseUrl}bigbangnew.webp`
   },
   {
     id: 3,
     name: 'Artisan Pizza',
-    image: '/artisanpizzanew.webp'
+    image: `${baseUrl}artisanpizzanew.webp`
   }
 ];
 

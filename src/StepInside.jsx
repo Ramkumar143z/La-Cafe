@@ -36,7 +36,7 @@ function StepInside() {
     for (let i = 1; i <= FRAME_COUNT_1; i++) {
       const img = new Image();
       const paddedIndex = i.toString().padStart(3, '0');
-      img.src = `/3d_frames/ezgif-frame-${paddedIndex}.jpg`;
+      img.src = `${import.meta.env.BASE_URL}3d_frames/ezgif-frame-${paddedIndex}.jpg`;
       img.onload = checkAllLoaded;
       loadedImages.push(img);
     }
@@ -45,7 +45,7 @@ function StepInside() {
     for (let i = 1; i <= FRAME_COUNT_2; i++) {
       const img = new Image();
       const paddedIndex = i.toString().padStart(3, '0');
-      img.src = `/3d_frames_2/frame-${paddedIndex}.jpg`;
+      img.src = `${import.meta.env.BASE_URL}3d_frames_2/frame-${paddedIndex}.jpg`;
       img.onload = checkAllLoaded;
       loadedImages.push(img);
     }

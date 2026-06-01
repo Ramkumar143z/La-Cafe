@@ -24,7 +24,7 @@ function ScrollHero() {
     for (let i = 1; i <= FRAME_COUNT; i++) {
       const img = new Image();
       const paddedIndex = i.toString().padStart(3, '0');
-      img.src = `/frames/ezgif-frame-${paddedIndex}.jpg`;
+      img.src = `${import.meta.env.BASE_URL}frames/ezgif-frame-${paddedIndex}.jpg`;
       img.onload = () => {
         loadedCount++;
         if (loadedCount === FRAME_COUNT) {

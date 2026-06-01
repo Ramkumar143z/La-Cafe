@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
 import './MenuSection.css';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const menuData = {
   'Espresso Bar': [
-    { name: 'Classic Espresso', price: '$3.50', description: 'Rich, full-bodied double shot with perfect crema.', image: '/menu_espresso.png' },
-    { name: 'Caffè Americano', price: '$4.00', description: 'Espresso stretched with hot filtered water.', image: '/menu_espresso.png' },
-    { name: 'Artisan Latte', price: '$5.50', description: 'Smooth espresso with perfectly micro-foamed milk.', image: '/menu_espresso.png' },
-    { name: 'Vanilla Bean Cappuccino', price: '$6.00', description: 'Classic cappuccino infused with real Madagascar vanilla.', image: '/menu_espresso.png' },
-    { name: 'Flat White', price: '$5.00', description: 'Velvety milk over a bold ristretto shot.', image: '/menu_espresso.png' },
-    { name: 'Caramel Macchiato', price: '$6.50', description: 'Vanilla latte marked with espresso and buttery caramel.', image: '/menu_espresso.png' }
+    { name: 'Classic Espresso', price: '$3.50', description: 'Rich, full-bodied double shot with perfect crema.', image: `${baseUrl}menu_espresso.png` },
+    { name: 'Caffè Americano', price: '$4.00', description: 'Espresso stretched with hot filtered water.', image: `${baseUrl}menu_espresso.png` },
+    { name: 'Artisan Latte', price: '$5.50', description: 'Smooth espresso with perfectly micro-foamed milk.', image: `${baseUrl}menu_espresso.png` },
+    { name: 'Vanilla Bean Cappuccino', price: '$6.00', description: 'Classic cappuccino infused with real Madagascar vanilla.', image: `${baseUrl}menu_espresso.png` },
+    { name: 'Flat White', price: '$5.00', description: 'Velvety milk over a bold ristretto shot.', image: `${baseUrl}menu_espresso.png` },
+    { name: 'Caramel Macchiato', price: '$6.50', description: 'Vanilla latte marked with espresso and buttery caramel.', image: `${baseUrl}menu_espresso.png` }
   ],
   'Cold Brews': [
-    { name: 'Signature Cold Brew', price: '$5.00', description: 'Slow-steeped for 24 hours for a smooth, bold flavor.', image: '/menu_coldbrew.png' },
-    { name: 'Nitro Cold Brew', price: '$6.00', description: 'Infused with nitrogen for a creamy, cascading texture.', image: '/menu_coldbrew.png' },
-    { name: 'Iced Irish Latte', price: '$6.50', description: 'Our signature espresso with cream and Irish cream syrup over ice.', image: '/menu_coldbrew.png' },
-    { name: 'Cold Brew Oat Float', price: '$7.00', description: 'Cold brew topped with a scoop of oat milk vanilla gelato.', image: '/menu_coldbrew.png' }
+    { name: 'Signature Cold Brew', price: '$5.00', description: 'Slow-steeped for 24 hours for a smooth, bold flavor.', image: `${baseUrl}menu_coldbrew.png` },
+    { name: 'Nitro Cold Brew', price: '$6.00', description: 'Infused with nitrogen for a creamy, cascading texture.', image: `${baseUrl}menu_coldbrew.png` },
+    { name: 'Iced Irish Latte', price: '$6.50', description: 'Our signature espresso with cream and Irish cream syrup over ice.', image: `${baseUrl}menu_coldbrew.png` },
+    { name: 'Cold Brew Oat Float', price: '$7.00', description: 'Cold brew topped with a scoop of oat milk vanilla gelato.', image: `${baseUrl}menu_coldbrew.png` }
   ],
   'Artisan Pastries': [
-    { name: 'Butter Croissant', price: '$4.50', description: 'Flaky, buttery perfection baked fresh every morning.', image: '/menu_pastry.png' },
-    { name: 'Almond Croissant', price: '$5.50', description: 'Twice-baked with almond frangipane and powdered sugar.', image: '/menu_pastry.png' },
-    { name: 'Pain au Chocolat', price: '$5.00', description: 'Classic French pastry wrapped around rich dark chocolate.', image: '/menu_pastry.png' },
-    { name: 'Seasonal Fruit Danish', price: '$6.00', description: 'Crisp pastry filled with cream cheese and seasonal compote.', image: '/menu_pastry.png' }
+    { name: 'Butter Croissant', price: '$4.50', description: 'Flaky, buttery perfection baked fresh every morning.', image: `${baseUrl}menu_pastry.png` },
+    { name: 'Almond Croissant', price: '$5.50', description: 'Twice-baked with almond frangipane and powdered sugar.', image: `${baseUrl}menu_pastry.png` },
+    { name: 'Pain au Chocolat', price: '$5.00', description: 'Classic French pastry wrapped around rich dark chocolate.', image: `${baseUrl}menu_pastry.png` },
+    { name: 'Seasonal Fruit Danish', price: '$6.00', description: 'Crisp pastry filled with cream cheese and seasonal compote.', image: `${baseUrl}menu_pastry.png` }
   ],
   'Signature Additions': [
-    { name: 'Matcha Tiramisu', price: '$8.50', description: 'Layers of matcha-soaked ladyfingers and mascarpone.', image: '/matcha.png' },
-    { name: 'Affogato al Caffè', price: '$7.00', description: 'A scoop of vanilla bean gelato drowned in hot espresso.', image: '/waffle.png' },
-    { name: 'Irish Coffee Cake', price: '$6.50', description: 'Moist coffee-infused cake with a whiskey glaze.', image: '/menu_pastry.png' }
+    { name: 'Irish Coffee Cake', price: '$6.50', description: 'Moist coffee-infused cake with a whiskey glaze.', image: `${baseUrl}menu_pastry.png` }
   ]
 };
 

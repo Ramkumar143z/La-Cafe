@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './Moments.css';
 
 function Moments() {
+  const baseUrl = import.meta.env.BASE_URL;
   const images = [
-    '/bg.png',
-    '/gallery_1.png',
-    '/gallery_2.png',
-    '/gallery_3.png'
+    `${baseUrl}bg.png`,
+    `${baseUrl}gallery_1.png`,
+    `${baseUrl}gallery_2.png`,
+    `${baseUrl}gallery_3.png`
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
